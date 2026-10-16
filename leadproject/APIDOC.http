@@ -1,0 +1,86 @@
+# API call for lead create
+
+###
+POST http://127.0.0.1:8000/lead
+Content-Type: application/json
+Authorization: Basic admin:admin
+
+{
+    "name":"Alan",
+    "phone":8301942708,
+    "email":"alan@gmail.com",
+    "course":"Python Fullstack",
+    "source":"Website",
+    "status":"Contacted",
+    "notes":"Evening Batch preffered"
+}
+
+# API call for list of all Leads
+###
+GET http://127.0.0.1:8000/lead
+Authorization: Basic admin:admin 
+
+
+# API call for list of all leads
+###
+GET http://127.0.0.1:8000/lead/detail/3
+Authorization: Basic admin:admin
+
+# API call for update lead data
+###
+PUT http://127.0.0.1:8000/lead/detail/3
+Content-Type: application/json
+Authorization: Basic admin:admin
+
+{
+    "id": 3,
+    "name": "Alan",
+    "phone": "8301942708",
+    "email": "alancd@gmail.com",
+    "course": "Python Fullstack",
+    "source": "Website",
+    "status": "Contacted",
+    "added_date": "2026-10-15T06:07:11.928267Z",
+    "notes": "Evening Batch preffered"
+}
+
+# API call for delete leads
+###
+DELETE http://127.0.0.1:8000/lead/detail/1
+Authorization: Basic admin:admin
+
+
+# API call for count
+###
+GET http://127.0.0.1:8000/leadcount
+Authorization: Basic admin:admin
+
+
+
+# API call for ordering leads based on name
+###
+GET http://127.0.0.1:8000/lead?ordering=name
+Authorization: Basic admin:admin
+
+
+# API call for oredring leads based on added date in ascending
+###
+GET http://127.0.0.1:8000/lead?ordering=added_date
+Authorization: Basic admin:admin
+
+# API call for oredring leads based on added date in descending
+###
+GET http://127.0.0.1:8000/lead?ordering=-added_date
+Authorization: Basic admin:admin
+
+
+# API call for filter leads based on status
+###
+GET http://127.0.0.1:8000/lead?search=Referral New
+Authorization: Basic admin:admin
+
+
+# API call for filter leads based on status
+###
+GET http://127.0.0.1:8000/lead?search=Contacted
+Authorization: Basic admin:admin
